@@ -1,0 +1,84 @@
+/**
+*  @project  Pure CSS Radio Button Tiles
+*  @author   Jamshid Elmi
+*  @created  2022-09-18 13:20:06
+*  @modified 2022-09-18 13:20:06
+*  @tutorial https://youtu.be/UShd9wHTR-o
+*/
+:root {
+  --primary-color: #07afd9;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #1e2b35;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.radio-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-container {
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+  margin: 0.5rem;
+}
+
+.input-container input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.input-container .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: transform 300ms ease, 
+              background 300ms ease;
+}
+
+.input-container ion-icon {
+  color: var(--primary-color);
+  font-size: 3rem;
+}
+
+.input-container label {
+  color: var(--primary-color);
+  font-size: 0.80rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} 
+
+input:checked + .radio-tile {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+input:checked + .radio-tile ion-icon,
+input:checked + .radio-tile label {
+  color: white;
+}
